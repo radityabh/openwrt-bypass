@@ -8,13 +8,14 @@
 
 name: Packages-AutoBuild
 
-on: 
+on:
   repository_dispatch:
-  # push: 
-  #   branches:
-  #     - master
-  # schedule:
-  #   - cron: 0 1 */1 * *
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
