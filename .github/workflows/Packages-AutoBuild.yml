@@ -18,7 +18,7 @@ on:
         default: 'false'
 
 env:
-  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   TZ: Asia/Shanghai
 
 jobs:
@@ -164,7 +164,7 @@ jobs:
       continue-on-error: true
       if: env.REPO_TOKEN && env.DEPLOY
       env:
-        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: "${{ env.FIRMWARE }}/*"
         name: Bypass for ${{ env.MTARGET }} ${{ env.EMOJI }} ${{ env.date2 }}
