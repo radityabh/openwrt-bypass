@@ -73,7 +73,7 @@ jobs:
         elif [ ${{matrix.target}} == "cortex-a53" ]; then
             wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/armvirt/64/openwrt-sdk-armvirt-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
         else
-            wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/21.02-SNAPSHOT/targets/armvirt/64/openwrt-sdk-21.02-SNAPSHOT-armvirt-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+            wget -cO sdk.tar.xz https://downloads.openwrt.org/releases/18.06.6/targets/armvirt/64/openwrt-sdk-18.06.6-armvirt-64_gcc-7.3.0_musl.Linux-x86_64.tar.xz
         fi
         mkdir openwrt
         svn co https://github.com/garypang13/packages-compile/trunk/devices openwrt/devices
